@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>library</title>
+</head>
+<body>
+    <header>
+        <ul>
+            <li>
+                <p>____Library page__________</p>
+                <a href="{% url 'landing' %}">landing</a>
+                <p>______________</p>
+            </li>
+            <li>
+                <div>
+                    <h1>Books: </h1>
+                    {% for book in books %}
+                    <ul>
+                        <h3>{{book.id}}</h3>
+                        <li>
+                            <h2>Title: <a href="#">{{book.title}}</a></h2>
+                            <h2>Descriptions: {{book.descriptions}}</h2>
+                            <h2>Count: {{book.count}}</h2>
+                        </li>
+                    </ul>
+                    {% endfor %}
+
+
+                </div>
+            </li>
+            <li>
+                <p>______________</p>
+                <a href="{% url 'landing' %}">Back</a>
+                <p>______________</p>
+            </li>
+        </ul>
+    </header>
+</body>
+</html>

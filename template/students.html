@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>students</title>
+</head>
+<body>
+    <ul>
+        <li>
+            <!-- <p>_____Student page_________</p>
+            {% for student in students %}
+            {{student.first_name}} <br>
+            <p>______________</p>
+            {% endfor %}
+             -->
+            <a href="{% url 'home' %}">home</a>
+            <p>______________</p>
+        </li>
+        <li>
+            <p>______________</p>
+            <a href="{% url 'library' %}">Back</a>
+        </li>
+    </ul>
+</body>
+</html>
