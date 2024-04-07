@@ -6,7 +6,7 @@ class BooksListView(View):
     def get(self, request):
         books = Book.objects.all()
         context = {
-            "books" : books
+            "books" : books,
         }
         return render(request, "library.html", context)
 

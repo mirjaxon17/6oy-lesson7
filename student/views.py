@@ -4,17 +4,9 @@ from .models import Student
 
 
 class StudentListView(View):
-    def first_name(self, request):
+    def get(self, request):
         students = Student.objects.all()
-        context = {
-            "students": students
-        }
-        return render(request, "students.html", context)
-# def student_page(request):
-#     return render(request, 'students.html')
-# def students_page(request):
-#     return render(request, "students.html")
-
+        return render(request, "students.html", context= {"talabalar":students})
 class LandingView(View):
     def get(self, request):
         return render(request, "landing.html")
