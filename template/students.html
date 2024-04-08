@@ -8,18 +8,17 @@
 <body>
     <ul>
         <li>
-            <p>_____Student page_________</p>
+            <h1>_____Student page_________</h1>
+            <h2>First names: </h2>
             {% for talaba in talabalar %}
-            <a href="#">{{talaba.first_name}} {{talaba.last_name}}<br></a>
+            <a href="#">{{talaba.id}}.{{talaba.first_name}}<br></a>
             <p>______________</p>
             {% endfor %}
-            
-            <a href="{% url 'home' %}">home</a>
             <p>______________</p>
         </li>
         <li>
             <p>______________</p>
-            <a href="{% url 'library' %}">Back</a>
+            <a href="{% url 'home' %}">Back</a>
         </li>
     </ul>
 </body>

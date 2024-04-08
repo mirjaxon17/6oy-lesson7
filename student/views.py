@@ -10,3 +10,4 @@ class StudentListView(View):
 class LandingView(View):
     def get(self, request):
         return render(request, "landing.html")
+    

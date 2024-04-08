@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     #app
     'student',
     'library',
+    'users',
 
 ]
 

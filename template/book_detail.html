@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book detail</title>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li>
+                <h1>Book detail</h1>
+                <p>______________</p>
+                <ul>
+                    <li>
+                        <h2>Title: {{book.title}}</h2>
+                        <h3>Description:</h3>
+                        <p>{{book.descriptions}}</p>
+                    </li>
+                    <li>
+                        <h3>Price: </h3>
+                        {{book.price}}
+                    </li>
+                    <li>
+                        <h3>Comments Book: </h3>
+                        {{book.comments}}
+                    </li>
+                    <li>
+                        <h3>Count Book: </h3>
+                        {{book.count}}
+                    </li>
+                    <li>
+                        <h3>Author: </h3>
+                        {{book.author.first_name}}
+                    </li>
+                    <p>______________</p>
+                    <li>
+                        <a href="{%url 'library'%}">Back</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
