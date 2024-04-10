@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>library</title>
+    <link rel="stylesheet" href="{% static 'auth/css/library.css' %}">
 </head>
 
 <body>
@@ -21,25 +23,36 @@
                 </form>
             </li>
             <li>
-                <div>
-                    <h1>Books: </h1>
+                <h1>Books: </h1>
+                <div class="contener">
                     {% for book in books %}
-                    <ul>
-                        <li>
-                            <h2>{{book.id}}. Title: <a href="{% url 'book-detail' book.id%}">{{book.title}}</a> </h2>
-                        </li>
-                    </ul>
+                        <div class="card">
+                            <img src="{{book.image.url}}" class="card-image-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-tytle">{{book.title}}</h5>
+                                <p class="card-text">{{book.descriptions}}</p>
+                                <h4 class="comments">Comments:</h4>
+                                <div class="comment">
+                                    {% for comment in book.comments.all%}
+                                    <b>Student:</b> {{comment.student.first_name}}
+                                    <p></p>
+                                    <b>Text: </b>{{comment}}
+                                    {%endfor%}
+                                </div>
+                                <a href="{% url 'book-detail' book.id%}" class="btn btn-primary">Click</a>
+                            </div>
+
+                        </div>
                     {% endfor %}
 
 
                 </div>
             </li>
-            <li>
-                <p>______________</p>
-                <a href="{% url 'landing' %}">Back</a>
-                <p>______________</p>
-            </li>
         </ul>
+        <div class="back">
+            <a href="{% url 'landing' %}">Back</a>
+            <p>______________</p>
+        </div>
     </header>
 </body>
 

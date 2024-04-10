@@ -9,14 +9,16 @@
     <header>
         <ul>
             <li>
-                <p>______________</p>
-                <a href="{% url 'students' %}">students</a>
-                <p>______________</p>
-            </li>
-            <li>
                 <h1>landing</h1>
+                {% if request.user.is_authenticated %}
                 <p>______________</p>
-                <a href="{% url 'library' %}">library</a>
+                    <a href="{% url 'library' %}">library</a> | <a href="{% url 'students' %}">students</a> | <a href="{% url 'logout'%}">Log out</a>
+                <p>______________</p>
+                {% else %}
+                    <a href="{% url 'registor'%}">Sign up</a> | <a href="{% url 'login'%}">Sig in</a>
+                    <p>______________</p>
+                    <a href="{% url 'library' %}">library</a> | <a href="{% url 'students' %}">students</a>
+                {% endif %}
             </li>
             <li>
                 <p>______________</p>
